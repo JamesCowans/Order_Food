@@ -148,4 +148,31 @@
     color:#333;
     font-size:80px;
     margin-right:10%;
-} */ */
+} */ 
+
+/* social media */
+
+footer {
+    height: 150px;
+}
+
+.interact {
+    text-align: center;
+    height: 125px;
+
+}
+
+.interact>li {
+    display: inline;
+}
+
+.interact i {
+    font-size: 150%;
+    margin: 1%;
+    padding: 5%;
+    color: white;
+}
+
+#menu-bar{
+    font-size: 500px;
+}
