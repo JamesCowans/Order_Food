@@ -1,0 +1,22 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Flipped Burger Company{% endblock %}</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+    <div id="main-top">
+        <a href="/" class="flipped_logo">Flipped Burger Company</a>
+    </div>
+    <div id ="subhead">
+        <div class="basket">Your basket is currently empty</div>
+    </div>
+    <div id="main-content">
+        {% block content %}
+        {% endblock %}
+    </div>
+</body>
+</html>
