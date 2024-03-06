@@ -1,40 +1,43 @@
 {% extends "shop/base.html" %}
+
 {% load static %}
 
 
 {% block title %}
-    {% if category %}{{ category.name }}{% else %}Products
-{% endif %}
+    {% if category %}{{ category.name }}{% else %}Products{% endif %}
 {% endblock %}
 
 {% block content %}
-{% include "../navbar.html" %}
-    <div id="option-menu">
-        <h3>Categories</h3>
-        <ul>
-            <li {% if not category %}class="selected"{% endif %}>
-            <a href="{% url 'shop:product_list' %}">All</a>
-            </li>
-        {% for c in categories %}
-            <li {% if category.slug == c.slug %}class="selected"{% endif %}>
-                <a href="{{ c.get_absolute_url }}">{{ c.name }}</a>
+<div id="sidebar">
+    <h3>Menu Options</h3>
+    <ul>
+        <li  {% if not category %}class="selected"{% endif%}>
+            <a href="{% url 'shop:product_list' %}">All Options</a>
+        </li>
+        {% for cats in categories %}
+            <li {% if category.slug == cats.slug %}class="selected"{% endif %}>
+                <a href="{{ cats.get_absolute_url }}">{{ cats.name}}</a>
             </li>
         {% endfor %}
-        </ul>
-    </div>
-    <div id="main-content" class ="product-list">
-        <hi>{% if category %}{{ category.name }}{% endif %}</h1>
-        {% for product in products %}
-            <div class="products">
-                <a href="{{ product.get_absolute_url }}">
-                    <img src="{% if product.image %}{{ product.image.url }}{% else %}{% static 'img/awaiting_image.png' %}{% endif %}">
-                </a>
-                <a href="{{ product.get_absolute_url }}">{{ product.name }}</a>
-                <br>
-                £{{ product.price }}
+    </ul>
+</div>
+<div id="main" class="product-list">
+    <h1>{% if category %}{{ category.name }}{% else %}Products{% endif %}</h1>
+</div>
+{% for product in products %}
+<div class="item">
+    <a href="{{ product.get_absolute_url }}">
+        <img src="{% if product.image %}{{ product.image.url }}{% else %}{% static 'img/awaiting_image.png' %}{% endif %}">
+    </a>
+    <a href="{{ product.get_absolute_url }}">{{ product.name}}</a>
+    <br>
+    £{{ product.price }}
+</div>
+{% endfor %}
+</div>
 
-            </div>
-        {% endfor %}
 
-    </div>
+
+
+    
 {% endblock %}

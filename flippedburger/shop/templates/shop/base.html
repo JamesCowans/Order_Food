@@ -8,48 +8,29 @@
     
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 {% load static %} 
-    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link href="{% static 'css/style.css' %}" rel="stylesheet">
 </head>
 
 <body>
-   
+    <img src="{% static 'img/FlippedHeader.jpg' %}">
+   <div id="header">
+    <a href="/" class="logo">Flipped Burger Company</a>
+    
+   </div>
+   <div id="subheader">
+    <div class="basket">
+        Your Basket is Currently Empty
+    </div>
+   </div>
+   <div id="content">
+    {% block content %}
+    {% endblock %}
+   </div>
    
 
-        <!-- <div class="container-fluid alert-container">
-            <div class="row d-none d-sm-block">
-                <div class="col-12">
-                        <img src="static/img/Black_flipped_logo.png" class="object-fit-cover border rounded" alt="Flipped Burger Company Logo"> 
-                </div>
-            </div>
-        </div> -->
-    
-            <br>
-            <!-- <div id="main-top">
-                <a href="/" class="flipped_logo">Flipped Burger Company</a>
-            </div> -->
-            <!-- <div id ="subhead">
-            <div class="basket">Your basket is currently empty</div>
-            </div>
-           <div class="container"> -->
-            <main>
-                    <div id="main-content">
-                        {% block content %}
-                        {% endblock %}
-                    </div>
-                </main>
-            </div>
-    </div>           
-    <!--<footer class="container-fluid fixed-bottom">
-        <div class="container"></div>
-            <p class="m-0 text-center text-white">Flipped Burger Company</p>
-            <p class="m-0 text-center text-white">Follow us: <i class="fab fa-facebook-square ms-3"></i>
-                <i class="fab fa-twitter-square ms-3"></i>
-                <i class="fab fa-instagram-square ms-3"></i>
-                <i class="fab fa-youtube-square ms-3"></i>
-            </p>
-        </div>
-    </footer> -->
-<!-- </div> -->
+         
+           
+           
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
 </body>

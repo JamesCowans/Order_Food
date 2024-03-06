@@ -1,17 +1,7 @@
+/* 
 /* @import url('https://fonts.googleapis.com/css2?family=Lato:wght@300&family=Oswald&display=swap');
 
-#main-top {
-    padding:10px 100px;
-    font-size:18px;
-    overflow:auto;
-}
 
-#main_top .flipped_logo {
-    font-family: 'Lato', sans-serif;
-    float:left;
-    color:#333;
-    font-size:80px;
-    margin-right:10%;
 }
 
 .basket{
@@ -119,10 +109,43 @@
    
 } */
 
-.navbar{
+.navbar-custom{
     background-color: #cc8aeb;
+    width:100%;
 }
 
-.navbar-custom{
-    background-color: red;
+#product-display{
+    
+    width: 80%;
+    height: 250px;
 }
+
+/* #banner{
+    align-items: center;
+    max-width:25px;
+    height:50px;
+    padding-bottom: 500px;
+    margin: 0;
+} */
+
+#flipped_logo{
+    width: 100%;
+    height: 300px;
+    border-radius: 75px;
+    object-fit:scale-down ;
+}
+
+#main-top {
+    
+    
+    
+    overflow:auto;
+}
+
+/* #main_top .flipped_logo {
+    font-family: 'Lato', sans-serif;
+    float:left;
+    color:#333;
+    font-size:80px;
+    margin-right:10%;
+} */ */
