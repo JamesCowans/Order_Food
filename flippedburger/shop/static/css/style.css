@@ -1,3 +1,5 @@
+/* @import url('https://fonts.googleapis.com/css2?family=Lato:wght@300&family=Oswald&display=swap');
+
 #main-top {
     padding:10px 100px;
     font-size:18px;
@@ -5,11 +7,15 @@
 }
 
 #main_top .flipped_logo {
-    font-family:  'sans-serif';
+    font-family: 'Lato', sans-serif;
     float:left;
     color:#333;
-    font-size:22px;
+    font-size:80px;
     margin-right:10%;
+}
+
+.basket{
+    width:90%;
 }
 
 .basket h2 {
@@ -17,10 +23,11 @@
 }
 
 #subhead {
-    background:#ececec;
-    color:#444;
+    background:#cc8aeb;
+    color:white;
     padding:15px 100px;
-    overflow:auto;
+    overflow:none;
+    max-width: 80%;
 }
 
 
@@ -30,6 +37,7 @@
 }
 
 #option-menu {
+    border-top: 50px;
     width:220px;
     padding:30px 20px 0 0;
     float:left;
@@ -62,7 +70,7 @@
 
 #main-content {
     float:left;
-    width: 96%;
+    width: 80%;
     margin-right:-220px;
     overflow:hidden;
 }
@@ -102,4 +110,19 @@
 
 .product-info h2 {
     margin-top:10px;
+}
+
+#logo-image {
+    max-width: 80%;
+    height: 25px;
+    
+   
+} */
+
+.navbar{
+    background-color: #cc8aeb;
+}
+
+.navbar-custom{
+    background-color: red;
 }

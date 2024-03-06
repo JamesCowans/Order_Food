@@ -1,11 +1,14 @@
 {% extends "shop/base.html" %}
 {% load static %}
 
+
 {% block title %}
-    {% if category %}{{ category.name }}{% else % }Products{% endif % }
+    {% if category %}{{ category.name }}{% else %}Products
+{% endif %}
 {% endblock %}
 
 {% block content %}
+{% include "../navbar.html" %}
     <div id="option-menu">
         <h3>Categories</h3>
         <ul>
@@ -20,7 +23,7 @@
         </ul>
     </div>
     <div id="main-content" class ="product-list">
-        <hi>{% if category %}{{ category.name }}{% else %}Products {% endif %}</h1>
+        <hi>{% if category %}{{ category.name }}{% endif %}</h1>
         {% for product in products %}
             <div class="products">
                 <a href="{{ product.get_absolute_url }}">
@@ -28,10 +31,10 @@
                 </a>
                 <a href="{{ product.get_absolute_url }}">{{ product.name }}</a>
                 <br>
-                ${{ product.price }}
+                £{{ product.price }}
 
             </div>
-        {% endfor 5%}
+        {% endfor %}
 
     </div>
 {% endblock %}

@@ -6,6 +6,11 @@ class Category(models.Model):
     name = models.CharField(max_length=100)
     slug = models.SlugField(max_length=100, unique=True)
 
+    def get_absolute_url(self):
+        return reverse('shop:product_list_by_category',
+                       args=[self.slug])
+
+
     class Meta:
         ordering = ['name']
         indexes = [ models.Index(fields=['name']),
@@ -13,10 +18,7 @@ class Category(models.Model):
         verbose_name= 'category'
         verbose_name_plural = 'categories'
 
-    def get_absolute_url(self):
-        return reverse('shop:product_list_by_category',
-                       args=[self.slug])
-
+    
     def __str__(self):
         return self.name
 
@@ -32,6 +34,9 @@ class Product(models.Model):
     created = models.DateTimeField(auto_now_add=True)
     updated = models.DateTimeField(auto_now=True)
 
+    def get_absolute_url(self):
+            return reverse('shop:product_detail', args = [self.id, self.slug])
+
     class Meta:
         ordering = ['name']
         indexes = [
@@ -40,8 +45,7 @@ class Product(models.Model):
             models.Index(fields=['created']),
         ]
 
-        def get_absolute_url(self):
-            return reverse('shop:product_detail', args = [self.id, self.slug])
+       
 
         def __str__(self):
             return self.name
