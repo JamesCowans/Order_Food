@@ -1,5 +1,6 @@
 from django.shortcuts import render, get_object_or_404
 from .models import Category, Product
+from basket.forms import BasketAddProductForm
 
 # Create your views here.
 
@@ -22,8 +23,10 @@ def product_detail(request, id, slug):
                                 id = id,
                                 slug = slug,
                                 available =True)
+    basket_product_form = BasketAddProductForm()
     
     
     return render(request,
                   'shop/product/detail.html',
-                  {'product' : product})
+                  {'product' : product, 'basket_product_form': basket_product_form})
+

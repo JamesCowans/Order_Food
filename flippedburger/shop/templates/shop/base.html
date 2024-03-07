@@ -40,6 +40,7 @@
                     <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                     <li {% if not category %} {% endif %}>
                         <a href="{% url 'shop:product_list' %}" class="dropdown-item">All Options</a>
+                        
                     </li>
                     <li {% for cats in categories %} {% if category.slug == cats.slug %} {% endif %}>
                             <a href="{{ cats.get_absolute_url }}" class="dropdown-item">{{ cats.name}}</a>
