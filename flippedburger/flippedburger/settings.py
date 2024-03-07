@@ -29,7 +29,7 @@ SECRET_KEY = 'django-insecure-ag56%lm9(%i=ev$(ra8%uhh1ld^6%90s$-s5v*l$_q1(vk@!^c
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['127.0.0.1', '.herokuapp']
 
 
 # Application definition
@@ -43,7 +43,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'shop.apps.ShopConfig',
     'basket.apps.BasketConfig',
-    'flippedburger'
+    'flippedburger',
+    
 ]
 
 MIDDLEWARE = [
